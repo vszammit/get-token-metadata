@@ -22,16 +22,14 @@ Follow these steps to run the script:
 
 3. Open the `sample.env` file and update the value for the API Key to your own value and rename file to `.env`. If you don't have an Alchemy API Key yet you can [create one for free here](https://alchemy.com/?a=starter-code).
 
-4. Open `get_metadata.js` and update the value of the token address found within the main function on line 13 and to reflect the address that you will be querying to get metadata. 
+4. Open `getMetadata.js` and update the value of the token address found within the main function on line 13 and to reflect the address that you will be querying to get metadata. 
 
 
-5. Initialize the project by running the following command: `yarn init --yes`
+5. Install the Alchemy SDK and the `dotenv` package running either of the following commands:
+    - `yarn add alchemy-sdk dotenv`
+    - `npm i alchemy-sdk dotenv`
 
-
-6. Install the Alchemy SDK and the `dotenv` package running the following commands: `yarn add alchemy-sdk dotenv`
-
-
-7. Run the script in the terminal: `node get_metadata.js`
+6. Run the script in the terminal: `node getMetadata.js`
 
 
 By following these steps, the script will execute and fetch the ERC-20 tokens owned by the specified address, printing out the desired fields to the console.
@@ -43,5 +41,5 @@ When working with the Alchemy SDK, there are several options and best practices 
 ### Pagination
 By default, the request for tokens has a page size of 100. If you have a large number of tokens and want to retrieve all of them, you can implement pagination. Alchemy's API supports pagination using the `page` and `size` parameters. You can adjust the `size` parameter to specify the number of tokens to retrieve per page and use the `page` parameter to iterate through the pages of results.
 
-### Filtering and Excluding NFTs
+### Filtering and Excluding Tokens
 The Alchemy API allows you to apply filters to your token requests. For example, you can exclude certain tokens based on specific criteria. The exact filtering options depend on the available fields and operators supported by Alchemy's API. Please refer to the linked API reference doc above for more information on how to apply filters to your requests.
